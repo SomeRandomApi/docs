@@ -1,0 +1,43 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../components/colors"
+
+## Our animals endpoint
+Here is a list of how our `/animal` endpoint works and the types of responses you'll get.
+
+<Callout type="info">Want more animals? Join the discord to give suggestions</Callout>
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /animal</Code>
+This endpoints allows you to fetch all of the types of animals instead of having to constantly check the docs for updates.
+
+**Example Response:**
+```url filename="URL"
+https://some-random-api.com/animal
+```
+```json filename="Response"
+{
+  "endpoints": [
+    "/animal/fox",
+    "/animal/cat",
+    "/animal/birb",
+    ...
+  ]
+}
+```
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /animal/<span style={{color: colors.requests["PARAM"]}}>:type</span></Code>
+This endpoints allows you to fetch all of the types of animals instead of having to constantly check the docs for updates.
+
+**Example Response:**
+```url filename="URL"
+https://some-random-api.com/animal/birb
+```
+```json filename="Response"
+{
+  "image": "https://i.imgur.com/U5blHCt.jpeg",
+  "fact": "There are more fake flamingos on Earth than real ones."
+}
+```
