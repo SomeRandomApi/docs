@@ -16,6 +16,6 @@ const withNextra = nextra({
 });
 
 export default {
-  output: "standalone",
+  // output: "standalone",
   ...withNextra()
 };
