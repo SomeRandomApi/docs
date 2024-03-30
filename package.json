@@ -1,5 +1,6 @@
 {
   "name": "some-random-api-docs",
+  "type": "module",
   "version": "0.0.1",
   "description": "Some Random Api Documentation",
   "scripts": {
@@ -22,7 +23,10 @@
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "remark-mdx-disable-explicit-jsx": "^0.1.0",
+    "sass": "^1.72.0",
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
     "@types/node": "18.11.10",

@@ -3,7 +3,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
   logo: <>
-    <img src='https://img.pyrocdn.com/dbKUgahg.png' style={{ width: 40, height: 40, marginRight: 8}} />
+    <img alt="SRA Logo" src='https://img.pyrocdn.com/dbKUgahg.png' style={{ width: 40, height: 40, marginRight: 8}} />
     <span>Some Random API</span>
   </>,
   project: {
