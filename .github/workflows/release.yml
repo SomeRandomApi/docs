@@ -1,0 +1,24 @@
+name: Release
+on:
+  workflow_run:
+    workflows: ["Build Check"]
+    branches: [master]
+    types: 
+      - completed
+
+jobs:
+  push-to-registry:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to Registry
+        uses: docker/login-action@v1
+        with:
+          registry: registry.lukestoodley.com
+          username: ${{ secrets.REG_USER }}
+          password: ${{ secrets.REG_PASS }}
+      - name: Build Image
+        run: docker build . --tag registry.lukestoodley.com/some-random-api/docs:latest
+      - name: Upload Image
+        run: docker push registry.lukestoodley.com/some-random-api/docs:latest
