@@ -1,0 +1,114 @@
+import { Tabs, Callout, Code } from 'nextra/components'
+import Image from 'next/image'
+import colors from "../../../components/colors";
+import greenTickIcon from '../../../public/images/icons/green-checkmark.svg'
+import redCrossIcon from '../../../public/images/icons/red-cross.svg'
+
+## Canvas Tools Endpoints
+Here is a list of how our `/canvas/overlays` endpoint works and the types of responses you'll get.
+
+<Callout type="info">Want more endpoints? Join the discord to give suggestions</Callout>
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /tools/colorviewer</Code>
+
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>hex</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/tools/colorviewer?hex=4B007D
+```
+**Image:**
+
+<Image loading="lazy" src="/images/canvas/tools/colorviewer.png" alt="Color Viewer Canvas Endpoint Example" width={256} height={256} quality="100" />
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /tools/hex</Code>
+
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>rgb</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/tools/hex?rgb=75,0,125
+```
+
+```json filename="Response"
+{
+  "hex": "#4B007D",
+  "original": {
+    "red": "75",
+    "green": "0",
+    "blue": "125"
+  }
+}
+```
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /tools/rgb</Code>
+
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>hex</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/tools/rgb?hex=4B007D
+```
+
+```json filename="Response"
+{
+  "r": 75,
+  "g": 0,
+  "b": 125
+}
+```
