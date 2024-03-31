@@ -1,0 +1,71 @@
+import { Tabs, Callout } from 'nextra/components'
+import Image from 'next/image'
+
+## Canvas Overlay Endpoints
+Here is a list of how our `/canvas/overlays` endpoint works and the types of responses you'll get.
+
+<Callout type="info">Want more endpoints? Join the discord to give suggestions</Callout>
+
+## Examples
+
+Each tab below will show you the URL and an example image returned by the URL.
+
+<Tabs items={[
+  'Comrade', 
+  'Gay', 
+  'Glass',
+  'Jail',
+  'Passed',
+  'Triggered',
+  'Wasted'
+  ]}>
+  <Tabs.Tab>
+    ```url filename="URL"
+    https://api.some-random-api.com/canvas/overlays/comrade?avatar=...
+    ```
+
+    <Image loading="lazy" src="/images/canvas/overlays/comrade.png" alt="Comrade Canvas Endpoint Example" width={256} height={256} quality="100" />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```url filename="URL"
+    https://api.some-random-api.com/canvas/overlays/gay?avatar=...
+    ```
+
+    <Image loading="lazy" src="/images/canvas/overlays/gay.png" alt="Gay Canvas Endpoint Example" width={256} height={256} quality="100" />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```url filename="URL"
+    https://api.some-random-api.com/canvas/overlays/glass?avatar=...
+    ```
+
+    <Image loading="lazy" src="/images/canvas/overlays/glass.png" alt="Glass Canvas Endpoint Example" width={256} height={256} quality="100" />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```url filename="URL"
+    https://api.some-random-api.com/canvas/overlays/jail?avatar=...
+    ```
+
+    <Image loading="lazy" src="/images/canvas/overlays/jail.png" alt="Jail Canvas Endpoint Example" width={256} height={256} quality="100" />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```url filename="URL"
+    https://api.some-random-api.com/canvas/overlays/passed?avatar=...
+    ```
+
+    <Image loading="lazy" src="/images/canvas/overlays/passed.png" alt="Passed Canvas Endpoint Example" width={256} height={256} quality="100" />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```url filename="URL"
+    https://api.some-random-api.com/canvas/overlays/triggered?avatar=...
+    ```
+
+    <Image loading="lazy" src="/images/canvas/overlays/triggered.png" alt="Triggered Canvas Endpoint Example" width={256} height={256} quality="100" />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```url filename="URL"
+    https://api.some-random-api.com/canvas/overlays/wasted?avatar=...
+    ```
+
+    <Image loading="lazy" src="/images/canvas/overlays/wasted.png" alt="Wasted Canvas Endpoint Example" width={256} height={256} quality="100" />
+  </Tabs.Tab>
+</Tabs>
