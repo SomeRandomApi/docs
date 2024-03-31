@@ -1,3 +1,5 @@
+import { Code, Pre, Tabs, Steps } from "nextra/components";
+
 ## Welcome to the SRA Documentation
 
 Some Random API has a numerous amount of endpoints ready to be used withou the use of an API key.
@@ -7,5 +9,68 @@ Throughout this documentation you will be told whether or not a certain endpoint
 
 ## Getting Started
 
+<Tabs items={["JavaScript (Node)", "Python"]}>
+  <Tabs.Tab>
+    <Steps>
+      ### Step 1
+      Install the wrapper
+      ```sh
+      npm i @some-random-api/some-random-api.js
+      ```
 
+      ### Step 2
+      Write some code!
 
+      ```js
+      const { SRAClient } = require('some-random-api');
+
+      const sraClient = new SRAClient(/* Insert API key if available */);
+      sraClient.fetch('/chatbot', { message: 'Hello' }).then(console.log);
+      ```
+
+      ### Result
+      Get a response from the AI 🤖
+
+      ```json
+      {
+         "response": "Hey there! *smiling* It's great to see you! How are you doing today?"
+      }
+      ```
+
+    </Steps>
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Steps>
+          ### Step 1
+      Install the wrapper
+      ```sh
+      python -m pip install somerandomapi.py
+      ```
+
+      ### Step 2
+      Try out the example below:
+
+      ```py
+
+      import asyncio
+      # import the library
+      import somerandomapi
+      # create a client
+
+      sr_api = somerandomapi.Client()
+
+      # define a function to get a random joke
+
+      async def get_random_joke():
+      joke = await sr_api.random_joke() # print the joke
+      print(joke)
+
+      # run the function
+
+      asyncio.run(get_random_joke())
+      ```
+    </Steps>
+
+  </Tabs.Tab>
+</Tabs>
