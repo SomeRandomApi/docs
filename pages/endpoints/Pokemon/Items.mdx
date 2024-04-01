@@ -1,0 +1,65 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../../components/colors";
+
+## Pokemon item endpoint
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /pokemon/items</Code>
+
+**Query Requirements:**<br/>
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>ability</Code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/pokemon/items?item=...
+```
+
+<Callout icon="ℹ️" type="info">If the item isn't found it will try and search for items that may match what you were looking for.</Callout>
+```json filename="Response"
+// 200 OK
+{
+  "id": 5,
+  "name": "safari-ball",
+  "effects": "...",
+  "cost": 0,
+  "attributes": [
+    "countable"
+    ...
+  ],
+  "category": "standard-balls",
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/safari-ball.png",
+  "descriptions": [
+    {
+      "description": "A special BALL that...",
+      "version": "ruby-sapphire"
+    },
+    ...
+  ]
+}
+
+// 404 Not Found
+{
+  "error": "Item not found",
+  "dym": [ // Did you mean?
+    {
+      "item": "poke-ball",
+      "certainty": "0.55"
+    },
+    ...
+  ]
+}
+```
