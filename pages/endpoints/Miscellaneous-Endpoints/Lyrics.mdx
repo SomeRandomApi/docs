@@ -1,0 +1,22 @@
+import { Code } from "nextra/components";
+import colors from "../../../components/colors";
+
+## Lyrics endpoint
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /lyrics</Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/lyrics?title=...
+```
+
+```json filename="Response"
+{
+  "title": "...",
+  "author": "...",
+  "lyrics": "...",
+  "thumbnail": "...",
+  "links": "...",
+  "disclaimer": "What the API returns is not guaranteed to return the right lyrics or have a matching title and author."
+}
+```
