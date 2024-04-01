@@ -1,0 +1,44 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../../components/colors";
+
+## Base64 Encoder
+
+<Callout type="info">Want more encoders? Join the discord to give suggestions</Callout>
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /base64</Code>
+
+**Query Requirements:**<br/>
+When making a request to this endpoint you must have **atleast 1** of the below query parameters
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>encode</Code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <Code>decode</Code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/base64?encode=...&decode=...
+```
+
+```json filename="Response"
+{
+  "encoded": "aGVsbG8=", // Will only show if encode query present
+  "decoded": "hello"     // Will only show if decode query present 
+}
+```
