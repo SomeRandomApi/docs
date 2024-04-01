@@ -40,6 +40,10 @@ const config: DocsThemeConfig = {
   },
   sidebar: {
     toggleButton: false
+  },
+  navigation: {
+    prev: false,
+    next: false,
   }
 }
 
