@@ -1,0 +1,40 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../components/colors"
+
+## Our images endpoint
+Here is a list of how our `/img` endpoint works and the types of responses you'll get.
+
+<Callout type="info">Want more images? Join the discord to give suggestions</Callout>
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /img</Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/img
+```
+```json filename="Response"
+{
+  "endpoints": [
+    "/img/fox",
+    "/img/cat",
+    "/img/birb",
+    ...
+  ]
+}
+```
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /img/<span style={{color: colors.requests["PARAM"]}}>:type</span></Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/img/birb
+```
+```json filename="Response"
+{
+  "link": "https://i.imgur.com/U5blHCt.jpeg"
+}
+```

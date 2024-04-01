@@ -1,0 +1,40 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../components/colors"
+
+## Our facts endpoint
+Here is a list of how our `/facts` endpoint works and the types of responses you'll get.
+
+<Callout type="info">Want more facts? Join the discord to give suggestions</Callout>
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /facts</Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/facts
+```
+```json filename="Response"
+{
+  "endpoints": [
+    "/facts/fox",
+    "/facts/cat",
+    "/facts/birb",
+    ...
+  ]
+}
+```
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /fact/<span style={{color: colors.requests["PARAM"]}}>:type</span></Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/fact/birb
+```
+```json filename="Response"
+{
+  "fact": "There are more fake flamingos on Earth than real ones."
+}
+```
