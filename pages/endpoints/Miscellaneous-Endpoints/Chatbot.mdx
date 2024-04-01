@@ -1,0 +1,35 @@
+import { Code } from "nextra/components";
+import colors from "../../../components/colors";
+
+## Chatbot endpoint
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /chatbot</Code>
+
+**Query Requirements (Required):**<br/>
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>message</Code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/chatbot?message=...
+```
+
+```json filename="Response"
+{
+  "response": "Hey there! *smiling* It's great to see you! How are you doing today?"
+}
+```
