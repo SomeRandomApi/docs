@@ -1,0 +1,28 @@
+import Image from "next/image";
+import colors from "../../../components/colors"
+import { Code, Tabs, Callout } from "nextra/components";
+import greenTickIcon from "../../../public/images/icons/green-checkmark.svg";
+import redCrossIcon from "../../../public/images/icons/red-cross.svg";
+
+## Welcome Image Generator
+
+Much like 🔗[Welcome Image Templates](/endpoints/Welcome-Images) this endpoint generates a templated welcome image.<br/>
+The difference with this endpoint is there are no preset backgrounds.
+
+You can use this endpoint via the `/premium` endpoint as such<br/>
+<Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /premium/welcome/<span style={{color: colors.requests["PARAM"]}}>:template</span></Code>
+
+The templates are the same as the templates show in the 🔗[Welcome Image Template Documentation](/endpoints/Welcome-Images).<br/>
+However here you can provide an image URL via the `bg` query parameter and that will be the background instead.
+
+### Example:
+
+<Callout>Please note this URL will not work. <br/>
+The templates required parameraters need to be met first. <br/>
+You can look here for an [Example](/endpoints/Welcome-Images/Template-1#welcome-image-template-1️⃣)</Callout>
+
+```url filename="URL"
+https://api.some-random.api/premium/welcome/1?bg={URL}
+```
+
+
