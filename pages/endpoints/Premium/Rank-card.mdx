@@ -1,0 +1,328 @@
+import { Code, Callout, Tabs } from "nextra/components";
+import Image from "next/image";
+import colors from "../../../components/colors";
+import greenTickIcon from "../../../public/images/icons/green-checkmark.svg";
+import redCrossIcon from "../../../public/images/icons/red-cross.svg";
+
+## Rank card endpoint
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /premium/rankcard</Code>
+
+**Query Requirements:**<br/>
+When making a request to this endpoint you must have **atleast 1** of the below query parameters
+{
+
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>avatar</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={greenTickIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>username</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={greenTickIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Must not include the discriminator</td>
+    </tr>
+        <tr>
+      <td>
+        <Code>discriminator</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={redCrossIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Will be hidden if ommitted or is "0"</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>cxp</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={greenTickIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Current XP</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>nxp</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={greenTickIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Next level XP</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>level</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={greenTickIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Current user level</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>rank</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={greenTickIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>User rank</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>cbg</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={redCrossIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Background color</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>ccxp</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={redCrossIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>XP progress bar color</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>cbar</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={redCrossIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>XP bar background color</td>
+    </tr>
+    <tr>
+      <td>
+        <Code>ctext</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={redCrossIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Text color</td>
+    </tr>
+        <tr>
+      <td>
+        <Code>ctag</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={redCrossIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Username color</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example images:**
+
+<Tabs
+  items={[
+    "Outline",
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+  ]}
+>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/outline.png"
+      loading="lazy"
+      width={797}
+      height={331}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-1.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-2.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-3.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-4.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-5.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-6.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-7.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-8.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Image
+      src="/images/canvas/Rank-Card/template-9.png"
+      loading="lazy"
+      width={900}
+      height={300}
+    />
+  </Tabs.Tab>
+</Tabs>
