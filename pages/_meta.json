@@ -1,4 +1,12 @@
 {
   "index": "Home",
-  "endpoints": "Endpoints"
+  "-- Documentation": {
+    "type": "separator",
+    "title": "Documentation"
+  },
+  "endpoints": "Endpoints",
+  "-- Wrappers": {
+    "type": "separator",
+    "title": "Wrappers"
+  }
 }

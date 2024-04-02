@@ -1,0 +1,53 @@
+import { Code, Callout, Tabs } from "nextra/components";
+import Image from "next/image";
+import colors from "../../../components/colors";
+import greenTickIcon from "../../../public/images/icons/green-checkmark.svg";
+import redCrossIcon from "../../../public/images/icons/red-cross.svg";
+
+## Pet Pet endpoint
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /premium/petpet</Code>
+
+**Query Requirements:**<br/>
+{
+
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>avatar</Code>
+      </td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={greenTickIcon}
+          alt="green tick"
+          width={16}
+          height={16}
+          quality="100"
+        />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example image:**
+
+<Image
+  loading="lazy"
+  src="/images/canvas/petpet.gif"
+  alt="pet pet"
+  width={256}
+  height={256}
+  quality="100"
+/>
