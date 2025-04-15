@@ -5,11 +5,11 @@ import greenTickIcon from '../../../public/images/icons/green-checkmark.svg'
 import redCrossIcon from '../../../public/images/icons/red-cross.svg'
 
 ## Canvas Tools Endpoints
-Here is a list of how our `/canvas/overlays` endpoint works and the types of responses you'll get.
+Here is a list of how our `/canvas/:tool` endpoint works and the types of responses you'll get.
 
 <Callout type="info">Want more endpoints? Join the discord to give suggestions</Callout>
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /tools/colorviewer</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /canvas/colorviewer</Code>
 
 {
 <table className="queryParamTable">
@@ -32,15 +32,15 @@ Here is a list of how our `/canvas/overlays` endpoint works and the types of res
 
 **Example:**
 ```url filename="URL"
-https://api.some-random-api.com/canvas/tools/colorviewer?hex=4B007D
+https://api.some-random-api.com/canvas/colorviewer?hex=4B007D
 ```
 **Image:**
 
-<Image loading="lazy" src="/images/canvas/tools/colorviewer.png" alt="Color Viewer Canvas Endpoint Example" width={256} height={256} quality="100" />
+<Image loading="lazy" src="/images/canvas/colorviewer.png" alt="Color Viewer Canvas Endpoint Example" width={256} height={256} quality="100" />
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /tools/hex</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /canvas/hex</Code>
 
 {
 <table className="queryParamTable">
@@ -63,7 +63,7 @@ https://api.some-random-api.com/canvas/tools/colorviewer?hex=4B007D
 
 **Example:**
 ```url filename="URL"
-https://api.some-random-api.com/canvas/tools/hex?rgb=75,0,125
+https://api.some-random-api.com/canvas/hex?rgb=75,0,125
 ```
 
 ```json filename="Response"
@@ -79,7 +79,7 @@ https://api.some-random-api.com/canvas/tools/hex?rgb=75,0,125
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /tools/rgb</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /canvas/rgb</Code>
 
 {
 <table className="queryParamTable">
@@ -102,7 +102,7 @@ https://api.some-random-api.com/canvas/tools/hex?rgb=75,0,125
 
 **Example:**
 ```url filename="URL"
-https://api.some-random-api.com/canvas/tools/rgb?hex=4B007D
+https://api.some-random-api.com/canvas/rgb?hex=4B007D
 ```
 
 ```json filename="Response"
