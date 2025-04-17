@@ -1,0 +1,59 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../components/colors"
+
+## Our animus endpoint
+Here is a list of how our `/animu` endpoint works and the types of responses you'll get.
+
+<Callout type="info">Want more animus? Join the discord to give suggestions</Callout>
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /animu</Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/animu
+```
+```json filename="Response"
+{
+  "types": [
+    "/animu/nom",
+    "/animu/poke",
+    "/animu/cry",
+    "/animu/quote",
+    ...
+  ]
+}
+```
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /animu/<span style={{color: colors.requests["PARAM"]}}>:type</span></Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/animu/nom
+```
+```json filename="Response"
+{
+  "link": "https://img.some-random-api.com/images/nom/1654556264.gif"
+  "type": "nom"
+}
+```
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /animu/quote</Code>
+
+**Example Response:**
+```url filename="URL"
+https://api.some-random-api.com/animu/quote
+```
+```json filename="Response"
+{
+  "quote": "What do you mean I use my sexual charm?!",
+  "anime": "Death Note",
+  "id": 4114,
+  "name": "Misa Amane"
+}
+```
