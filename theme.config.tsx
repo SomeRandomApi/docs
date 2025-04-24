@@ -24,7 +24,7 @@ const config: DocsThemeConfig = {
       property="keywords"
       content="api, endpoints, fun, free"
     />
-    <Script defer data-domain="some-random-api.com" src="https://nothing.dbot.dev/js.js" />
+    <script defer data-domain="some-random-api.com" src="https://nothing.dbot.dev/js.js" />
   </>,
   logo: <>
     <img alt="SRA Logo" src='https://img.pyrocdn.com/dbKUgahg.png' style={{ width: 40, height: 40, marginRight: 8}} />
