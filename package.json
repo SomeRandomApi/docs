@@ -20,8 +20,8 @@
   "homepage": "https://github.com/SomeRandomApi/docs#readme",
   "dependencies": {
     "next": "^13.0.6",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
+    "nextra": "^2",
+    "nextra-theme-docs": "^2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-mdx-disable-explicit-jsx": "^0.1.0",
