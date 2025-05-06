@@ -1,0 +1,164 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../components/colors"
+
+## Tokens
+
+---
+
+The current ratelimits are enforced as such:
+- If a route is not listed here it effectively uses the `global` ratelimit.
+- All `/canvas` endpoints are `60/60s` irrespective of authentication.
+
+### Unauthenticated Request Ratelimits
+
+- This is when no `Authorization` header is provided.
+
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>Ratelimit</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>/</Code>
+      </td>
+      <td>
+        <Code>30/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <Code>/chatbot</Code>
+      </td>
+      <td>
+        <Code>10/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <Code>/lyrics</Code>
+      </td>
+      <td>
+        <Code>10/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### Authenticated Request Ratelimits
+
+- This is when the `Authorization` header is provided.
+
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>Ratelimit</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>/</Code>
+      </td>
+      <td>
+        <Code>60/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <Code>/chatbot</Code>
+      </td>
+      <td>
+        <Code>20/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <Code>/lyrics</Code>
+      </td>
+      <td>
+        <Code>20/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+        <tr>
+      <td>
+        <Code>/lyrics</Code>
+      </td>
+      <td>
+        <Code>60/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### Premium Ratelimits
+
+- This is when no `Authorization` header is provided and you have paid for premium. 💖
+
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>Ratelimit</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Code>/</Code>
+      </td>
+      <td>
+        <Code>120/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <Code>/chatbot</Code>
+      </td>
+      <td>
+        <Code>60/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### Handling our ratelimits
+
+To avoid getting ratelimited there are multiple ways to handle this
+
+- You can check one of the following headers:
+  - `x-ratelimit-limit` => Tells you your limit for the timeframe
+  - `x-ratelimit-remaining` => Tells you how many requests are left within with your bucket
+  - `x-ratelimit-next-available` => Tells you when your oldest request expires
+
+If you get ratelimited you'll see the following message:
+```json
+  {
+    "retryAfter": "2025-05-06T22:41:57.406Z",
+    "retryAfterMs": 60000,
+    "error": "You have been ratelimited."
+  }
+```
+
+### How our ratelimits work
+
+Some Random API uses a sliding window ratelimit.
+
+Read more about how that works [here](https://smudge.ai/blog/ratelimit-algorithms)
+
