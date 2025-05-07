@@ -5,8 +5,5 @@
     "title": "Documentation"
   },
   "endpoints": "Endpoints",
-  "-- Wrappers": {
-    "type": "separator",
-    "title": "Wrappers"
-  }
+  "ratelimits": "Ratelimits"
 }
