@@ -8,11 +8,11 @@ Here is a list of how our `/canvas/filter` endpoint works and the types of respo
 
 <Callout type="info">Want more filters? Join the discord to give suggestions</Callout>
 
-<Callout type="info">The `avatar` query is required for most (if not all) of these endpoints</Callout>
+<Callout type="info">The `avatar` query is required for all of these endpoints</Callout>
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/blue</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/blue</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -24,7 +24,7 @@ https://api.some-random-api.com/canvas/filter/blue?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/blurple</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/blurple</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -59,7 +59,7 @@ https://api.some-random-api.com/canvas/filter/blurple?avatar=...
 
 **Example:**
 ```url filename="URL"
-https://api.some-random-api.com/canvas/misc/pixelate?avatar=...
+https://api.some-random-api.com/canvas/filter/pixelate?avatar=...
 ```
 **Image:**
 
@@ -90,7 +90,7 @@ https://api.some-random-api.com/canvas/misc/pixelate?avatar=...
 
 **Example:**
 ```url filename="URL"
-https://api.some-random-api.com/canvas/misc/blur?avatar=...
+https://api.some-random-api.com/canvas/filter/blur?avatar=...
 ```
 **Image:**
 
@@ -98,7 +98,7 @@ https://api.some-random-api.com/canvas/misc/blur?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/blurple2</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/blurple2</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -110,7 +110,7 @@ https://api.some-random-api.com/canvas/filter/blurple2?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/brightness</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/brightness</Code>
 
 <Callout type="info">The `brightness` query is required for this endpoint</Callout>
 
@@ -124,7 +124,7 @@ https://api.some-random-api.com/canvas/filter/blurple2?brightness=75&avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/color</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/color</Code>
 
 <Callout type="info">The `color` query is required for this endpoint</Callout>
 
@@ -138,7 +138,7 @@ https://api.some-random-api.com/canvas/filter/blurple2?color=FF4FF4&avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/green</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/green</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -150,7 +150,7 @@ https://api.some-random-api.com/canvas/filter/green?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/greyscale</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/greyscale</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -162,7 +162,7 @@ https://api.some-random-api.com/canvas/filter/greyscale?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/invert</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/invert</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -174,7 +174,7 @@ https://api.some-random-api.com/canvas/filter/invert?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/red</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/red</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -186,7 +186,7 @@ https://api.some-random-api.com/canvas/filter/red?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/invertgreyscale</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/invertgreyscale</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -198,7 +198,7 @@ https://api.some-random-api.com/canvas/filter/invertgreyscale?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/sepia</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/sepia</Code>
 
 **Example Response:**
 ```url filename="URL"
@@ -210,7 +210,7 @@ https://api.some-random-api.com/canvas/filter/sepia?avatar=...
 
 ---
 
-### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filters/threshold</Code>
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/threshold</Code>
 
 <Callout type="info">The `threshold` query is required for this endpoint</Callout>
 
