@@ -11,12 +11,14 @@ import colors from "../../../components/colors";
   <thead>
     <tr>
       <th>Query Parameter</th>
+      <th>Required?</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+      <tr>
+      <td><Code>move</Code></td>
       <td>
-        <Code>move</Code>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
       </td>
     </tr>
   </tbody>
@@ -29,8 +31,7 @@ https://api.some-random-api.com/pokemon/moves?move=...
 ```
 
 <Callout icon="ℹ️" type="info">If the move isn't found it will try and search for moves that may match what you were looking for.</Callout>
-```json filename="Response"
-// 200 OK
+```json filename="Response - 200 OK"
 {
   "id": 2,
   "name": "karate-chop",
@@ -55,8 +56,9 @@ https://api.some-random-api.com/pokemon/moves?move=...
     ...
   ]
 }
+```
 
-// 404 Not Found
+```json filename="Response - 404 Not Found"
 {
   "error": "Move not found",
   "dym": [ // Did you mean
