@@ -5,18 +5,21 @@ import colors from "../../../components/colors";
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /chatbot</Code>
 
-**Query Requirements (Required):**<br/>
+**Query Requirements:**<br/>
+
 {
 <table className="queryParamTable">
   <thead>
     <tr>
       <th>Query Parameter</th>
+      <th>Required?</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+      <tr>
+      <td><Code>message</Code></td>
       <td>
-        <Code>message</Code>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
       </td>
     </tr>
   </tbody>
