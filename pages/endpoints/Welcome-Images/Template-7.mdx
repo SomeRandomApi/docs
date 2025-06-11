@@ -3,95 +3,16 @@ import { Code, Tabs } from "nextra/components";
 import greenTickIcon from "../../../public/images/icons/green-checkmark.svg";
 import redCrossIcon from "../../../public/images/icons/red-cross.svg";
 
-## Welcome Image Template 7️⃣
+## Welcome Image Template 7️⃣ Examples:
 
-**Query Requirements:**
-{
-
-<table className="queryParamTable">
-  <thead>
-    <tr>
-      <th>Query Parameter</th>
-      <th>Required?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <Code>avatar</Code>
-      </td>
-      <td>
-        <Image
-          loading="lazy"
-          style={{ margin: "auto" }}
-          src={greenTickIcon}
-          alt="green tick"
-          width={16}
-          height={16}
-          quality="100"
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <Code>username</Code>
-      </td>
-      <td>
-        <Image
-          loading="lazy"
-          style={{ margin: "auto" }}
-          src={greenTickIcon}
-          alt="green tick"
-          width={16}
-          height={16}
-          quality="100"
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <Code>guildName</Code>
-      </td>
-      <td>
-        <Image
-          loading="lazy"
-          style={{ margin: "auto" }}
-          src={greenTickIcon}
-          alt="green tick"
-          width={16}
-          height={16}
-          quality="100"
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <Code>memberCount</Code>
-      </td>
-      <td>
-        <Image
-          loading="lazy"
-          style={{ margin: "auto" }}
-          src={greenTickIcon}
-          alt="green tick"
-          width={16}
-          height={16}
-          quality="100"
-        />
-      </td>
-    </tr>
-  </tbody>
-</table>
-}
-
-## Example images:
-
-This url will use `:background` instead of an explicit background.<br />
-Each tab below is a background you can use in place of this placeholder
-
+**Example Request:**
 ```url filename="URL"
-https://api.some-random.com/canvas/welcome/img/7/:background
+https://api.some-random.com/welcome/img/7/:background
 ```
+
+<Callout type="warning">
+    Note: The <Code>:background</Code> needs to be replaced with the background you want to use. You will also need to provide the required query parameters as specified in the <a href="/endpoints/Welcome-Images/">Welcome Images</a> endpoint.
+</Callout>
 
 <Tabs
   items={[
