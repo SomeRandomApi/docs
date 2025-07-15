@@ -1,0 +1,22 @@
+import { Code, Callout } from "nextra/components";
+import colors from "../../components/colors"
+
+## Legacy Tokens
+
+<Callout type="warning">Legacy Tokens will stop working in July, 2026. Please login and generate a new one.</Callout>
+<Callout type="warning">If you pay for premium and are using a legacy token you will need to use a newly generated token to access the perks.</Callout>
+
+---
+All legacy tokens, irrespective of premium status have a global ratelimit of 30 requests over 60 seconds (1 request every 2 seconds).
+
+If a ratelimit for a route is higher than this, your ratelimit will still be 30/30s.<br/>
+If it is lower, the lower ratelimit will be enforced.
+
+Find the current ratelimits [here](/ratelimits/tokens)
+
+### How our ratelimits work
+
+Some Random API uses a sliding window ratelimit.
+
+Read more about how that works [here](https://smudge.ai/blog/ratelimit-algorithms)
+

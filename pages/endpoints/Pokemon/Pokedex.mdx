@@ -1,5 +1,7 @@
 import { Code, Callout } from "nextra/components";
 import colors from "../../../components/colors";
+import Image from 'next/image'
+import greenTickIcon from '../../../public/images/icons/green-checkmark.svg'
 
 ## Pokemon pokedex endpoint
 
@@ -11,12 +13,14 @@ import colors from "../../../components/colors";
   <thead>
     <tr>
       <th>Query Parameter</th>
+      <th>Required?</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+      <tr>
+      <td><Code>id</Code></td>
       <td>
-        <Code>id</Code>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
       </td>
     </tr>
   </tbody>
@@ -28,8 +32,7 @@ import colors from "../../../components/colors";
 https://api.some-random-api.com/pokemon/pokedex?id=...
 ```
 
-```json filename="Response"
-// 200 OK
+```json filename="Response - 200 OK"
 {
   "name": "bulbasaur",
   "id": "001",
@@ -80,8 +83,9 @@ https://api.some-random-api.com/pokemon/pokedex?id=...
   "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
   "generation": "1"
 }
+```
 
-// 404 Not Found
+```json filename="Response - 404 Not Found"
 {
   "error": "Sorry, I could not find that pokemon"
 }

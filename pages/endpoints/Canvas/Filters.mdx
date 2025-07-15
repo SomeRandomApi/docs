@@ -14,7 +14,28 @@ Here is a list of how our `/canvas/filter` endpoint works and the types of respo
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/blue</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/blue?avatar=...
 ```
@@ -26,7 +47,28 @@ https://api.some-random-api.com/canvas/filter/blue?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/blurple</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/blurple?avatar=...
 ```
@@ -44,6 +86,7 @@ https://api.some-random-api.com/canvas/filter/blurple?avatar=...
     <tr>
       <th>Query Parameter</th>
       <th>Required?</th>
+      <th>Notes</th>
     </tr>
   </thead>
   <tbody>
@@ -52,6 +95,7 @@ https://api.some-random-api.com/canvas/filter/blurple?avatar=...
       <td>
         <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
       </td>
+      <td>Must be a valid url and PNG format</td>
     </tr>
   </tbody>
 </table>
@@ -75,6 +119,7 @@ https://api.some-random-api.com/canvas/filter/pixelate?avatar=...
     <tr>
       <th>Query Parameter</th>
       <th>Required?</th>
+      <th>Notes</th>
     </tr>
   </thead>
   <tbody>
@@ -83,6 +128,7 @@ https://api.some-random-api.com/canvas/filter/pixelate?avatar=...
       <td>
         <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
       </td>
+      <td>Must be a valid url and PNG format</td>
     </tr>
   </tbody>
 </table>
@@ -100,7 +146,28 @@ https://api.some-random-api.com/canvas/filter/blur?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/blurple2</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/blurple2?avatar=...
 ```
@@ -112,9 +179,35 @@ https://api.some-random-api.com/canvas/filter/blurple2?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/brightness</Code>
 
-<Callout type="info">The `brightness` query is required for this endpoint</Callout>
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+		<th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+		  <td>Must be a valid url and PNG format</td>
+    </tr>
+    <tr>
+          <td><Code>brightness</Code></td>
+          <td>
+            <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+          </td>
+		<td />
+        </tr>
+  </tbody>
+</table>
+}
 
-**Example Response:**
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/blurple2?brightness=75&avatar=...
 ```
@@ -126,9 +219,35 @@ https://api.some-random-api.com/canvas/filter/blurple2?brightness=75&avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/color</Code>
 
-<Callout type="info">The `color` query is required for this endpoint</Callout>
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+		<th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+		  <td>Must be a valid url and PNG format</td>
+    </tr>
+    <tr>
+          <td><Code>color</Code></td>
+          <td>
+            <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+          </td>
+		<td />
+        </tr>
+  </tbody>
+</table>
+}
 
-**Example Response:**
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/blurple2?color=FF4FF4&avatar=...
 ```
@@ -140,7 +259,28 @@ https://api.some-random-api.com/canvas/filter/blurple2?color=FF4FF4&avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/green</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/green?avatar=...
 ```
@@ -152,7 +292,28 @@ https://api.some-random-api.com/canvas/filter/green?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/greyscale</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/greyscale?avatar=...
 ```
@@ -164,7 +325,28 @@ https://api.some-random-api.com/canvas/filter/greyscale?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/invert</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/invert?avatar=...
 ```
@@ -176,7 +358,28 @@ https://api.some-random-api.com/canvas/filter/invert?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/red</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/red?avatar=...
 ```
@@ -188,7 +391,28 @@ https://api.some-random-api.com/canvas/filter/red?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/invertgreyscale</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/invertgreyscale?avatar=...
 ```
@@ -200,7 +424,28 @@ https://api.some-random-api.com/canvas/filter/invertgreyscale?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/sepia</Code>
 
-**Example Response:**
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Must be a valid url and PNG format</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/sepia?avatar=...
 ```
@@ -212,9 +457,35 @@ https://api.some-random-api.com/canvas/filter/sepia?avatar=...
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /filter/threshold</Code>
 
-<Callout type="info">The `threshold` query is required for this endpoint</Callout>
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+		<th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>avatar</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+		  <td>Must be a valid url and PNG format</td>
+    </tr>
+    <tr>
+          <td><Code>threshold</Code></td>
+          <td>
+            <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+          </td>
+		<td />
+        </tr>
+  </tbody>
+</table>
+}
 
-**Example Response:**
+**Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/filter/threshold?threshold=75&avatar=...
 ```

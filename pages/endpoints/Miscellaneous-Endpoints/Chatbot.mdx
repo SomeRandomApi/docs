@@ -1,22 +1,42 @@
 import { Code } from "nextra/components";
 import colors from "../../../components/colors";
+import Image from 'next/image';
+import greenTickIcon from '../../../public/images/icons/green-checkmark.svg'
+import redCrossIcon from "../../../public/images/icons/red-cross.svg";
 
 ## Chatbot endpoint
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /chatbot</Code>
 
-**Query Requirements (Required):**<br/>
+**Query Requirements:**<br/>
+
 {
 <table className="queryParamTable">
   <thead>
     <tr>
       <th>Query Parameter</th>
+      <th>Required?</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td><Code>message</Code></td>
       <td>
-        <Code>message</Code>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+    </tr>
+    <tr>
+      <td><Code>memoryKey (premium only)</Code></td>
+      <td>
+        <Image
+          loading="lazy"
+          style={{ margin: "auto" }}
+          src={redCrossIcon}
+          alt="red cross"
+          width={16}
+          height={16}
+          quality="100"
+        />
       </td>
     </tr>
   </tbody>
@@ -25,7 +45,7 @@ import colors from "../../../components/colors";
 
 **Example Response:**
 ```url filename="URL"
-https://api.some-random-api.com/chatbot?message=...
+https://api.some-random-api.com/chatbot?message=...&memoryKey=uniqueId
 ```
 
 ```json filename="Response"
