@@ -1,18 +1,21 @@
 import { Callout, Cards, Card, Code } from "nextra/components";
 import Image from "next/image";
+import greenTickIcon from "../../public/images/icons/green-checkmark.svg";
 
-## Welcome Image Endpoints
+## Welcome Image Templates
 
-Here is a list of how our `/welcome/img/:template/:background` endpoint works and the types of responses you'll get.
+**Example Request:**
+```url filename="URL"
+https://api.some-random-api.com/welcome/img/:template/:background?type=join&textcolor=green&username=test&guildName=test&memberCount=5&avatar=https://img.pyrocdn.com/dbKUgahg.png
+```
 
-<Callout type="info">
-  Want more templates? Join the discord to give suggestions
+<Callout type="warning">
+    Note: The <Code>:template</Code> and <Code>:background</Code> need to be replaced with the template and background you want to use.
 </Callout>
 
-## Templates
-
-Some templates have specific query requirements. These are shown on the documentaton for each template.<br/>
-Below is a list of query parameters that are not dependant on template.
+<Callout type="info">
+    Note: Some templates will not display every single query parameter even though they are all required.
+</Callout>
 
 **Query Requirements:**
 {
@@ -21,19 +24,86 @@ Below is a list of query parameters that are not dependant on template.
   <thead>
     <tr>
       <th>Query Parameters</th>
-      <th></th>
+      <th>Required?</th>
+        <th>Notes</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>type</td>
       <td>
-        <Code>join</Code> <Code>leave</Code>
+          <Code>type</Code>
       </td>
+        <td>
+            <Image
+                loading="lazy"
+                style={{ margin: "auto" }}
+                src={greenTickIcon}
+                alt="green tick"
+                width={16}
+                height={16}
+                quality="100"
+            />
+        </td>
+            <td>
+                Options: <Code>join</Code> or <Code>leave</Code>
+            </td>
     </tr>
     <tr>
-      <td>textcolor</td>
+        <td>
+            <Code>avatar</Code>
+        </td>
+        <td>
+            <Image
+                loading="lazy"
+                style={{ margin: "auto" }}
+                src={greenTickIcon}
+                alt="green tick"
+                width={16}
+                height={16}
+                quality="100"
+            />
+        </td>
+        <td>
+            Must be a valid url and PNG format
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <Code>username</Code>
+        </td>
+        <td>
+            <Image
+                loading="lazy"
+                style={{ margin: "auto" }}
+                src={greenTickIcon}
+                alt="green tick"
+                width={16}
+                height={16}
+                quality="100"
+            />
+        </td>
+        <td>
+            The username of the user
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <Code>textcolor</Code>
+        </td>
+        <td>
+            <Image
+                loading="lazy"
+                style={{ margin: "auto" }}
+                src={greenTickIcon}
+                alt="green tick"
+                width={16}
+                height={16}
+                quality="100"
+            />
+        </td>
       <td>
+          Options:
+          <br />
         <Code>red</Code>
         <br />
         <Code>orange</Code>
@@ -55,12 +125,53 @@ Below is a list of query parameters that are not dependant on template.
         <Code>white</Code>
       </td>
     </tr>
+    <tr>
+        <td>
+            <Code>guildName</Code>
+        </td>
+        <td>
+            <Image
+                loading="lazy"
+                style={{ margin: "auto" }}
+                src={greenTickIcon}
+                alt="green tick"
+                width={16}
+                height={16}
+                quality="100"
+            />
+        </td>
+        <td>
+            The name of the guild
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <Code>memberCount</Code>
+        </td>
+        <td>
+            <Image
+                loading="lazy"
+                style={{ margin: "auto" }}
+                src={greenTickIcon}
+                alt="green tick"
+                width={16}
+                height={16}
+                quality="100"
+            />
+        </td>
+        <td>
+            Must be a valid number
+        </td>
+    </tr>
   </tbody>
 </table>
 }
 
 Below is a list of the 7 templates, pick one to get started.
-The various templates may take different query parameters these are shown in the documentation for each one.
+
+<Callout type="info">
+    When selecting a template, you only need to put the number in the URL, e.g. `/welcome/img/3/` for Template 3.
+</Callout>
 
 <Cards>
   <Card
@@ -100,7 +211,7 @@ The various templates may take different query parameters these are shown in the
   />
 </Cards>
 
-We have **13** different backgrounds and those are shown as examples in each template.
+We have **13** different background images and those are shown as examples in each template.
 They are named as such:
 
 - `blobday`
