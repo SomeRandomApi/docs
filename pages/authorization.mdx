@@ -1,0 +1,99 @@
+import { Code, Tabs, Steps, Callout } from "nextra/components";
+
+## Authorization
+
+<Callout type="danger">
+    <strong>Important:</strong> API tokens are sensitive and must be kept secret. Do not share or expose your token in frontend code or public code repositories.
+</Callout>
+
+Some Random API provides a wide variety of endpoints, many of which do not require an API token. However, **certain endpoints**—especially those with higher rate limits or more powerful functionality—**require authentication using an API token**.
+
+To access these endpoints:
+
+- You **must include** an `Authorization` header in your HTTP request.
+- The value should be **only the API token** you generate from the [SRA Dashboard](https://some-random-api.com/user/settings).
+- **Do not prepend** the token with `"Bearer "` or any other prefix.
+
+<Callout type="info">
+    If you're using a [legacy token](/ratelimits/legacytokens), it will stop working in July 2026. Please generate a new one from the dashboard to ensure compatibility.
+</Callout>
+
+## HTTP Request Code Examples
+<Callout type="info">
+    <strong>Note:</strong> The following code examples demonstrate how to make authenticated requests to SRA using various programming languages. If you are using a wrapper, you may not need to handle the authorization header manually.
+</Callout>
+
+<Tabs items={["JavaScript (Node)", "Python", "Java", "C#"]}>
+    <Tabs.Tab>
+        <Steps>
+            ```js
+            const fetch = require("node-fetch");
+
+            fetch("https://some-random-api.com/animal/dog", {
+                headers: {
+                    Authorization: "your-api-token-here"
+                }
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.error("Error:", err));
+            ```
+        </Steps>
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <Steps>
+            ```py
+            import requests
+
+            headers = {
+                "Authorization": "your-api-token-here"
+            }
+
+            response = requests.get("https://some-random-api.com/animal/dog", headers=headers)
+            print(response.json())
+            ```
+        </Steps>
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <Steps>
+            ```java
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+
+            public class Main {
+                public static void main(String[] args) throws Exception {
+                    URL url = new URL("https://some-random-api.com/animal/dog");
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setRequestProperty("Authorization", "your-api-token-here");
+
+                    int responseCode = connection.getResponseCode();
+                    System.out.println("Response Code: " + responseCode);
+                    // Read and handle response stream here...
+                }
+            }
+            ```
+        </Steps>
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <Steps>
+            ```csharp
+            using System;
+            using System.Net.Http;
+            using System.Threading.Tasks;
+
+            class Program {
+                static async Task Main() {
+                    using var client = new HttpClient();
+                    client.DefaultRequestHeaders.Add("Authorization", "your-api-token-here");
+
+                    var response = await client.GetAsync("https://some-random-api.com/animal/dog");
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(content);
+                }
+            }
+            ```
+        </Steps>
+    </Tabs.Tab>
+</Tabs>

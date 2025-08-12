@@ -1,10 +1,13 @@
-import { Code } from "nextra/components";
+import { Code, Callout } from "nextra/components";
 import colors from "../../../components/colors";
 import Image from 'next/image';
 import greenTickIcon from '../../../public/images/icons/green-checkmark.svg'
 import redCrossIcon from "../../../public/images/icons/red-cross.svg";
 
 ## Chatbot endpoint
+<Callout type="info">
+    <strong>Note:</strong> This endpoint requires an API key to use. If you do not have one, you can read how to generate it on the [SRA Dashboard](https://some-random-api.com/user/settings). Premium users also get increased [rate limits](/ratelimits/tokens) for this endpoint.
+</Callout>
 
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /chatbot</Code>
 
