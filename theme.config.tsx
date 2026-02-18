@@ -36,7 +36,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://discord.gg/tTUMWFd',
   },
-  docsRepositoryBase: 'https://github.com/SomeRandomApi/docs',
+  docsRepositoryBase: 'https://github.com/SomeRandomApi/docs/blob/master/',
   footer: {
     text: `©️ ${new Date().getUTCFullYear()} Some Random API`,
   },
