@@ -7,7 +7,7 @@ import colors from "../../components/colors"
 
 The current ratelimits are enforced as such:
 - If a route is not listed here it effectively uses the `global` ratelimit.
-- All `/canvas` endpoints are `60/60s` irrespective of authentication. Canvas requests are counted separately, they do not use up the limits below.
+- `/canvas` endpoints follow the same tiered limits as everything else, see the `/canvas` row in each table below. Canvas requests are counted separately, they don't use up your `/` or `/lyrics` limit and vice versa.
 - A token that is invalid, expired, banned or a [legacy token](/ratelimits/legacytokens) is rejected with a `403`. It is not treated as an unauthenticated request. See [Token errors](#token-errors).
 
 ### Unauthenticated Request Ratelimits
@@ -35,6 +35,15 @@ The current ratelimits are enforced as such:
     <tr>
       <td>
         <Code>/lyrics</Code>
+      </td>
+      <td>
+        <Code>10/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <Code>/canvas</Code>
       </td>
       <td>
         <Code>10/60s</Code>
@@ -75,6 +84,15 @@ The current ratelimits are enforced as such:
       </td>
       <td></td>
     </tr>
+    <tr>
+      <td>
+        <Code>/canvas</Code>
+      </td>
+      <td>
+        <Code>30/60s</Code>
+      </td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
 
@@ -105,6 +123,15 @@ The current ratelimits are enforced as such:
     <tr>
       <td>
         <Code>/lyrics</Code>
+      </td>
+      <td>
+        <Code>60/60s</Code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <Code>/canvas</Code>
       </td>
       <td>
         <Code>60/60s</Code>
