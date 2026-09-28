@@ -7,11 +7,12 @@ import colors from "../../components/colors"
 
 The current ratelimits are enforced as such:
 - If a route is not listed here it effectively uses the `global` ratelimit.
-- All `/canvas` endpoints are `60/60s` irrespective of authentication.
+- All `/canvas` endpoints are `60/60s` irrespective of authentication. Canvas requests are counted separately, they do not use up the limits below.
+- A token that is invalid, expired, banned or a [legacy token](/ratelimits/legacytokens) is rejected with a `403`. It is not treated as an unauthenticated request. See [Token errors](#token-errors).
 
 ### Unauthenticated Request Ratelimits
 
-- This is when no `Authorization` header is provided.
+- This is when no token is provided.
 
 <table className="queryParamTable">
   <thead>
@@ -45,7 +46,7 @@ The current ratelimits are enforced as such:
 
 ### Authenticated Request Ratelimits
 
-- This is when the `Authorization` header is provided.
+- This is when a valid token is provided in the `Authorization` header.
 
 <table className="queryParamTable">
   <thead>
@@ -79,7 +80,7 @@ The current ratelimits are enforced as such:
 
 ### Premium Ratelimits
 
-- This is when the `Authorization` header is provided and you have paid for premium. 💖
+- This is when a valid token is provided in the `Authorization` header and you have paid for premium. 💖
 
 <Callout type="info">If you hit these ratelimits please reach out in discord.</Callout>
 
@@ -122,14 +123,69 @@ To avoid getting ratelimited there are multiple ways to handle this
   - `x-ratelimit-remaining` => Tells you how many requests are left within with your bucket
   - `x-ratelimit-next-available` => Tells you when your oldest request expires
 
-If you get ratelimited you'll see the following message:
+If you get ratelimited you'll get a `429` with the following message:
 ```json
   {
     "retryAfter": "2025-05-06T22:41:57.406Z",
     "retryAfterMs": 60000,
-    "error": "You have been ratelimited."
+    "error": "You have been ratelimited.",
+    "note": "You can generate a token for free at https://some-random-api.com/user/settings and increase your limits."
   }
 ```
+
+The `note` tells you how to get higher limits and depends on how you made the request:
+
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Request</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No token</td>
+      <td>Generate a free token on the dashboard.</td>
+    </tr>
+    <tr>
+      <td>Token, no premium</td>
+      <td>Upgrade to premium.</td>
+    </tr>
+    <tr>
+      <td>Premium</td>
+      <td>Reach out in our discord.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Token errors
+
+If you send a token that we can't accept you'll get a `403` instead of a ratelimit bucket:
+
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Reason</th>
+      <th>Error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Invalid, expired, unknown or legacy token</td>
+      <td>
+        <Code>Invalid or expired token. Please generate a new token from the dashboard at https://some-random-api.com/user/settings.</Code>
+      </td>
+    </tr>
+    <tr>
+      <td>Banned token</td>
+      <td>
+        <Code>This token has been banned.</Code> The response can also include a <Code>reason</Code> and a <Code>bannedAt</Code> date.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+[Legacy tokens](/ratelimits/legacytokens) get the same response as any other invalid token.
 
 ### How our ratelimits work
 
