@@ -143,6 +143,69 @@ https://api.some-random-api.com/canvas/misc/heart?avatar=...
 
 ---
 
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /misc/homebrew</Code>
+
+Text in the style of the Wii Homebrew Channel banner.
+
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>top</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Top line, e.g. <Code>the</Code>. Up to 30 characters</td>
+    </tr>
+      <tr>
+      <td><Code>middle</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Middle line, in bold, e.g. <Code>homebrew</Code>. Up to 30 characters</td>
+    </tr>
+      <tr>
+      <td><Code>bottom</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+      <td>Bottom line, e.g. <Code>channel</Code>. Up to 30 characters</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+<Callout type="info">Long lines are shrunk to fit the image.</Callout>
+
+**Example:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/misc/homebrew?top=the&middle=random&bottom=api
+```
+**Image:**
+
+<Image loading="lazy" src="/images/canvas/misc/homebrew.png" alt="Homebrew Channel Canvas Endpoint Example" width={376} height={282} quality="100" />
+
+```json filename="Response - 400 Bad Request"
+{
+  "error": "Missing 'middle' query parameter"
+}
+```
+
+```json filename="Response - 400 Bad Request"
+{
+  "error": "middle length must be 30 characters or less"
+}
+```
+
+---
+
 ### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /misc/horny</Code>
 
 {
