@@ -112,3 +112,145 @@ https://api.some-random-api.com/canvas/rgb?hex=4B007D
   "b": 125
 }
 ```
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /canvas/colorconvert</Code>
+
+Finds the closest named color for a hex or rgb value. Names come from the [Name That Color](https://chir.ag/projects/ntc/) list (~1500 colors).
+
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>hex</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={redCrossIcon} alt="red cross" width={16} height={16} quality="100" />
+      </td>
+    </tr>
+      <tr>
+      <td><Code>rgb</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={redCrossIcon} alt="red cross" width={16} height={16} quality="100" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+<Callout type="info">Provide either `hex` (6 digits, e.g. `9000FC`) or `rgb` (e.g. `144,0,252`). If both are given, `hex` is used. `exact` is `true` when the color has its own name and `false` when the closest name was used.</Callout>
+
+**Example:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/colorconvert?hex=FF0000
+```
+
+```json filename="Response"
+{
+  "name": "Red",
+  "hex": "#FF0000",
+  "rgb": {
+    "r": 255,
+    "g": 0,
+    "b": 0
+  },
+  "exact": true,
+  "original": {
+    "hex": "#FF0000",
+    "rgb": {
+      "r": 255,
+      "g": 0,
+      "b": 0
+    }
+  }
+}
+```
+
+```url filename="URL"
+https://api.some-random-api.com/canvas/colorconvert?rgb=144,0,252
+```
+
+```json filename="Response"
+{
+  "name": "Electric Violet",
+  "hex": "#8B00FF",
+  "rgb": {
+    "r": 139,
+    "g": 0,
+    "b": 255
+  },
+  "exact": false,
+  "original": {
+    "hex": "#9000FC",
+    "rgb": {
+      "r": 144,
+      "g": 0,
+      "b": 252
+    }
+  }
+}
+```
+
+```json filename="Response - 400 Bad Request"
+{
+  "error": "invalid hex"
+}
+```
+
+---
+
+### <Code style={{ fontWeight: 400 }}><span style={{color: colors.requests["GET"]}}>GET</span> /canvas/colorconvert/reverse</Code>
+
+Finds a named color and returns its hex and rgb values. Case, spaces and punctuation are ignored. If there is no exact match, the most similar name is returned with `exact: false`.
+
+{
+<table className="queryParamTable">
+  <thead>
+    <tr>
+      <th>Query Parameter</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td><Code>name</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={greenTickIcon} alt="green tick" width={16} height={16} quality="100" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
+
+**Example:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/colorconvert/reverse?name=Electric%20Purple
+```
+
+```json filename="Response"
+{
+  "name": "Electric Violet",
+  "hex": "#8B00FF",
+  "rgb": {
+    "r": 139,
+    "g": 0,
+    "b": 255
+  },
+  "exact": false,
+  "certainty": "0.62",
+  "original": {
+    "name": "Electric Purple"
+  }
+}
+```
+
+```json filename="Response - 404 Not Found"
+{
+  "error": "Color not found"
+}
+```
