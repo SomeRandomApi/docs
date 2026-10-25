@@ -33,6 +33,9 @@ https://api.some-random-api.com/pokemon/items?item=...
 ```
 
 <Callout icon="ℹ️" type="info">If the item isn't found it will try and search for items that may match what you were looking for.</Callout>
+
+<Callout type="warning">Many newer items (ids above 847) don't have effects, prices or descriptions yet: `effects` is empty, `cost` is `0` and `descriptions` is empty. Item ids aren't continuous, so some numbers return a 404.</Callout>
+
 ```json filename="Response - 200 OK"
 {
   "id": 5,

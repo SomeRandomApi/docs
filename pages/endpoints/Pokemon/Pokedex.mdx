@@ -41,7 +41,14 @@ import redCrossIcon from '../../../public/images/icons/red-cross.svg'
 
 The pokedex covers every Pokémon from Generation 1 to 9, plus alternate forms (Mega, regional, Gigantamax and others). Forms share their species' `id`, so `?id=` always returns the base species. Use `?pokemon=` to get a form, e.g. `?pokemon=venusaur-mega`.
 
-<Callout type="warning">Pokémon numbered 891 and up, and all alternate forms, don't have `species`, `base_experience`, `description` or sprites yet. Those fields are `null`, and `sprites` is `{ "normal": null, "animated": null }`.</Callout>
+<Callout type="warning">
+A few alternate forms are missing some fields, which are `null` when they are:
+
+- Regional forms (Alolan, Galarian, Hisuian, Paldean) have no `species` or `description`, since those differ from the original form.
+- Some newer Mega Evolutions have no `base_experience`.
+- A handful of forms have no sprite, and some have no `animated` sprite.
+
+</Callout>
 
 **Example Response:**
 ```url filename="URL"
@@ -93,8 +100,8 @@ https://api.some-random-api.com/pokemon/pokedex?id=...
     ]
   },
   "sprites": {
-    "normal": "http://i.some-random-api.com/pokemon/bulbasaur.png",
-    "animated": "http://i.some-random-api.com/pokemon/bulbasaur.gif"
+    "normal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "animated": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/1.gif"
   },
   "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
   "generation": "1"

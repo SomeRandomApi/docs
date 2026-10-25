@@ -34,7 +34,7 @@ https://api.some-random-api.com/pokemon/moves?move=...
 
 <Callout icon="ℹ️" type="info">If the move isn't found it will try and search for moves that may match what you were looking for.</Callout>
 
-<Callout type="warning">Moves with ids 827 - 919 (mostly Generation 9) don't have effects, descriptions or learnsets yet: `effects` is `null`, and `pokemon` and `descriptions` are empty.</Callout>
+<Callout type="warning">Moves with ids 827 - 919 (mostly Generation 9) don't have `effects` or `contest` yet, so those keys are left out, the same as for older moves without them. The Torque moves also have no `descriptions` or `pokemon`, since no Pokémon you can catch learns them.</Callout>
 
 ```json filename="Response - 200 OK"
 {
