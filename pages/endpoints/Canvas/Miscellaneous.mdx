@@ -741,6 +741,14 @@ https://api.some-random-api.com/canvas/misc/transgender?avatar=...
       <td>light</td>
 		<td />
     </tr>
+    <tr>
+      <td><Code>date</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={redCrossIcon} alt="red cross" width={16} height={16} quality="100" />
+      </td>
+      <td>Today</td>
+		<td>ISO 8601, e.g. <Code>2026-10-20</Code>. Shown as <Code>Oct 20, 2026</Code> (UTC)</td>
+    </tr>
   </tbody>
 </table>
 }
@@ -748,6 +756,24 @@ https://api.some-random-api.com/canvas/misc/transgender?avatar=...
 **Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/misc/tweet?displayname=...&username=...&comment=...&theme=...&avatar=...
+```
+
+<Callout type="info">The `date` query takes an ISO 8601 date (`2026-10-20`) or date-time (`2026-10-20T14:30:00Z`). Seconds, milliseconds and the offset are optional, and a date-time without an offset is read as UTC. Dates that don't exist, like `2026-02-30`, are rejected. The tweet shows the date only, not the time of day.</Callout>
+
+**Example with a date:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/misc/tweet?displayname=...&username=...&comment=...&avatar=...&date=2026-10-20T14:30:00Z
+```
+
+**Invalid date:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/misc/tweet?displayname=...&username=...&comment=...&avatar=...&date=10/20/2026
+```
+
+```json filename="Response - 400 Bad Request"
+{
+  "error": "Invalid date format. Expected ISO 8601, e.g. '2026-10-20T14:30:00Z' or '2026-10-20'"
+}
 ```
 **Image:**
 
@@ -789,6 +815,13 @@ https://api.some-random-api.com/canvas/misc/tweet?displayname=...&username=...&c
       </td>
 		<td />
     </tr>
+    <tr>
+      <td><Code>date</Code></td>
+      <td>
+        <Image loading="lazy" style={{ margin: 'auto' }} src={redCrossIcon} alt="red cross" width={16} height={16} quality="100" />
+      </td>
+		<td>When the comment was posted, in ISO 8601, e.g. <Code>2026-10-20T14:30:00Z</Code>. Defaults to one week ago</td>
+    </tr>
   </tbody>
 </table>
 }
@@ -796,6 +829,31 @@ https://api.some-random-api.com/canvas/misc/tweet?displayname=...&username=...&c
 **Example:**
 ```url filename="URL"
 https://api.some-random-api.com/canvas/misc/youtube-comment?username=...&comment=...&avatar=...
+```
+
+<Callout type="info">The `date` query takes an ISO 8601 date (`2026-10-20`) or date-time (`2026-10-20T14:30:00Z`). Seconds, milliseconds and the offset are optional, and a date-time without an offset is read as UTC. Dates that don't exist, like `2026-02-30`, are rejected. The comment shows how long ago that was, the way YouTube does: seconds, minutes, hours, days, then weeks (up to 4), months (up to 11) and years, each rounded down. Without a `date`, it shows `1 week ago`. The date can't be in the future.</Callout>
+
+**Example with a date:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/misc/youtube-comment?username=...&comment=...&avatar=...&date=2026-10-22T12:00:00Z
+```
+On Oct 25, 2026 at 12:00 UTC, this shows `3 days ago`.
+
+**Invalid date:**
+```url filename="URL"
+https://api.some-random-api.com/canvas/misc/youtube-comment?username=...&comment=...&avatar=...&date=2026-02-30
+```
+
+```json filename="Response - 400 Bad Request"
+{
+  "error": "Invalid date format. Expected ISO 8601, e.g. '2026-10-20T14:30:00Z' or '2026-10-20'"
+}
+```
+
+```json filename="Response - 400 Bad Request (future date)"
+{
+  "error": "date can't be in the future"
+}
 ```
 **Image:**
 
